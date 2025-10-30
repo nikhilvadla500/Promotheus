@@ -1,0 +1,13 @@
+apiVersion: monitoring.googleapis.com/v1
+kind: PodMonitoring
+metadata:
+  name: gke-monitoring-demo
+  namespace: kumar
+spec:
+  selector:
+    matchLabels:
+      app: gke-monitoring-demo
+  endpoints:
+  - port: http
+    path: /metrics
+    interval: 30s
